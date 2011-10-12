@@ -5,13 +5,15 @@ import toxi.geom.Vec2D;
 
 public class Cell {
 
-	public Vec2D point;
-	public float weight;
-	public Polygon2D poly;
-	public Vec2D centroid;
-	public float area;
-	public float targetArea;
-	public float targetRadius;
+	public Vec2D point = new Vec2D();
+	public float weight = 0f;
+	public Polygon2D poly = new Polygon2D();
+	public Vec2D centroid = new Vec2D();
+	public float area = 0f;
+	public float targetArea = 0f;
+	public float targetRadius = 0f;
+	public float radiusBoost = 1f;
+	public float radius = 0f; 
 
 	public Cell(Vec2D p, float weight) {
 		this.point = p;
