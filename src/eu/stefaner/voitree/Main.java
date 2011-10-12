@@ -11,7 +11,8 @@ import toxi.processing.ToxiclibsSupport;
 public class Main extends PApplet {
 
 	private static final float CENTROID_ATTR = 0.2f;
-	private static final float DIST_STEEPNESS = .3f;
+	private static final float DIST_STEEPNESS = .2f;
+	private static final float FORCE_DAMP = .5f;
 	private ToxiclibsSupport gfx;
 	private WeightedVoronoi voronoi;
 	private PolygonClipper2D clip;
@@ -41,7 +42,7 @@ public class Main extends PApplet {
 				randomWeight = weightsLeft;
 			}
 
-			cells[i] = new Cell(new Vec2D(random(width), random(height * (1 - randomWeight))), randomWeight);
+			cells[i] = new Cell(new Vec2D(random(width), height * (1 - randomWeight/DIST_STEEPNESS)), randomWeight);
 			cells[i].targetArea = randomWeight * width * height;
 			cells[i].targetRadius = (float) Math.sqrt(cells[i].targetArea / PI);
 
@@ -54,10 +55,10 @@ public class Main extends PApplet {
 
 	public void draw() {
 		scaleFactor += .001f;
-		scaleFactor = Math.min(1f, scaleFactor);
+		scaleFactor = Math.min(9f, scaleFactor);
 
 		for (Cell c : cells) {
-			c.radius = Math.min(c.targetRadius, scaleFactor * maxTargetRadius);
+			c.radius = (float) Math.min(c.targetRadius, Math.sqrt(scaleFactor) * maxTargetRadius);
 
 			float pad = c.radius * c.radiusBoost;
 			c.point.x = Math.max(pad, c.point.x);
@@ -81,23 +82,18 @@ public class Main extends PApplet {
 
 				diffVec.normalize();
 
-				float ratio = c.radius / minDistance;
+				float ratio = c.radius * c.radiusBoost / minDistance;
 
-				c2.point.x -= ratio * delta * diffVec.x *.1f;
-				c2.point.y -= ratio * delta * diffVec.y *.1f;
-				c.point.x += (1 - ratio) * delta * diffVec.x *.1f;
-				c.point.y += (1 - ratio) * delta * diffVec.y *.1f;
+				c2.point.x -= ratio * delta * diffVec.x * FORCE_DAMP;
+				c2.point.y -= ratio * delta * diffVec.y * FORCE_DAMP;
+				c.point.x += (1 - ratio) * delta * diffVec.x * FORCE_DAMP;
+				c.point.y += (1 - ratio) * delta * diffVec.y *FORCE_DAMP;
 			}
 		}
 
 		voronoi = new WeightedVoronoi();
 		for (Cell c : cells) {
-			try {
-				c.point = voronoi.addAndReturnPoint(c.point);
-			} catch (Exception e) {
-				println("error adding point");
-			}
-
+			voronoi.addPoint(c.point);
 		}
 
 		for (Cell c : cells) {
@@ -150,6 +146,7 @@ public class Main extends PApplet {
 			strokeWeight(5);
 			point(c.point.x, c.point.y);
 
+			fill(120,20,90, 50);
 			text("" + Math.floor(100 * c.area / c.targetArea) / 100f, c.point.x, c.point.y);
 		}
 
