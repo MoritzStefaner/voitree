@@ -41,7 +41,7 @@ public class Main extends PApplet {
 
 			cells[i] = new Cell(new Vec2D(random(width), height - height * ((float) (randomWeight))), randomWeight);
 			cells[i].targetArea = randomWeight * width * height;
-			cells[i].targetRadius = (float) Math.sqrt(cells[i].targetArea/PI);
+			cells[i].targetRadius = (float) Math.sqrt(cells[i].targetArea / PI);
 		}
 
 		clip = new SutherlandHodgemanClipper(new Rect(0, 0, width, height));
@@ -50,7 +50,7 @@ public class Main extends PApplet {
 
 	public void draw() {
 
-		float factor = .05f;
+		float factor = 0.01f;
 
 		for (Cell c : cells) {
 			for (Polygon2D p : voronoi.getRegions()) {
@@ -64,7 +64,7 @@ public class Main extends PApplet {
 			c.point.x += (c.centroid.x - c.point.x) * factor;
 			c.point.y += (c.centroid.y - c.point.y) * factor;
 
-			float pad = c.targetRadius;
+			float pad = c.targetRadius * .5f;
 			c.point.x = Math.max(pad, c.point.x);
 			c.point.x = Math.min(c.point.x, width - pad);
 			c.point.y = Math.max(pad, c.point.y);
@@ -99,33 +99,27 @@ public class Main extends PApplet {
 		}
 
 		for (Cell c : cells) {
-
-			double force = Math.sqrt(c.targetArea / c.area);
-			ArrayList<Vec2D> nb = voronoi.getNeighbors(c.point);
-
-//			if(force < 1) continue;
-			
-			for (Vec2D p2 : nb) {
-				if (p2 == null)
+			for (Cell c2 : cells) {
+				if (c == c2)
 					continue;
 
-				for (Cell c2 : cells) {
-					if (p2.distanceTo(c2.point) < 1) {
-						Vec2D diffVec = c2.point.sub(c.centroid);
-						diffVec.normalizeTo(c.targetRadius + c2.targetRadius);
+				Vec2D diffVec = new Vec2D(c2.centroid.x - c.centroid.x, c2.centroid.y - c.centroid.y);
 
-						c2.point.x += (float) (c.centroid.x + diffVec.x * force - c2.point.x) * FORCE * (c.targetRadius/(c.targetRadius + c2.targetRadius));
-						c2.point.y += (float) (c.centroid.y + diffVec.y * force - c2.point.y) * FORCE * (c.targetRadius/(c.targetRadius + c2.targetRadius));
-
-						break;
-					}
+				if (diffVec.magnitude() > c.targetRadius + c2.targetRadius) {
+					continue;
 				}
-			}
 
+				diffVec.normalizeTo(c.targetRadius + c2.targetRadius);
+
+				c2.point.x += (float) (c.point.x + diffVec.x - c2.point.x) * FORCE * (c.targetRadius / (c.targetRadius + c2.targetRadius));
+				c2.point.y += (float) (c.point.y + diffVec.y - c2.point.y) * FORCE * (c.targetRadius / (c.targetRadius + c2.targetRadius));
+
+				break;
+			}
 		}
 
-		FORCE += .005;
-		FORCE = Math.min(FORCE, .1f);
+		FORCE += .1;
+		FORCE = Math.min(FORCE, .6f);
 
 		background(0);
 		fill(0);
@@ -141,7 +135,7 @@ public class Main extends PApplet {
 			stroke(255, 50);
 			strokeWeight(1);
 			noFill();
-			ellipse(c.centroid.x, c.centroid.y, c.targetRadius*2f, c.targetRadius*2f);
+			ellipse(c.centroid.x, c.centroid.y, c.targetRadius * 2f, c.targetRadius * 2f);
 
 			stroke(255, 50);
 			strokeWeight(5);
