@@ -29,7 +29,7 @@ public class Main extends PApplet {
 		gfx = new ToxiclibsSupport(this);
 		cells = new Cell[numItems];
 		float weightsLeft = 1f;
-
+		float sumWeights = 0;
 		for (int i = 0; i < numItems; i++) {
 			float randomWeight;
 			if (i < numItems - 1) {
@@ -39,8 +39,9 @@ public class Main extends PApplet {
 				randomWeight = weightsLeft;
 			}
 
-			cells[i] = new Cell(new Vec2D( random(width), height - height * ((float) (randomWeight))), randomWeight);
+			cells[i] = new Cell(new Vec2D(random(width), height - height * ((float) (randomWeight))), randomWeight);
 			cells[i].targetArea = randomWeight * width * height;
+			cells[i].targetRadius = (float) Math.sqrt(cells[i].targetArea/PI);
 		}
 
 		clip = new SutherlandHodgemanClipper(new Rect(0, 0, width, height));
@@ -49,7 +50,7 @@ public class Main extends PApplet {
 
 	public void draw() {
 
-		float factor = .2f;
+		float factor = .05f;
 
 		for (Cell c : cells) {
 			for (Polygon2D p : voronoi.getRegions()) {
@@ -63,7 +64,7 @@ public class Main extends PApplet {
 			c.point.x += (c.centroid.x - c.point.x) * factor;
 			c.point.y += (c.centroid.y - c.point.y) * factor;
 
-			float pad = 10;
+			float pad = c.targetRadius;
 			c.point.x = Math.max(pad, c.point.x);
 			c.point.x = Math.min(c.point.x, width - pad);
 			c.point.y = Math.max(pad, c.point.y);
@@ -102,6 +103,8 @@ public class Main extends PApplet {
 			double force = Math.sqrt(c.targetArea / c.area);
 			ArrayList<Vec2D> nb = voronoi.getNeighbors(c.point);
 
+//			if(force < 1) continue;
+			
 			for (Vec2D p2 : nb) {
 				if (p2 == null)
 					continue;
@@ -109,13 +112,11 @@ public class Main extends PApplet {
 				for (Cell c2 : cells) {
 					if (p2.distanceTo(c2.point) < 1) {
 						Vec2D diffVec = c2.point.sub(c.centroid);
-						diffVec.normalizeTo((float) Math.sqrt(c.targetArea / TWO_PI) + (float) Math.sqrt(c2.targetArea / TWO_PI));
+						diffVec.normalizeTo(c.targetRadius + c2.targetRadius);
 
-						c2.point.x += (float) (c.centroid.x + diffVec.x * force - c2.point.x) * FORCE * force;
-						c2.point.y += (float) (c.centroid.y + diffVec.y * force - c2.point.y) * FORCE * force;
+						c2.point.x += (float) (c.centroid.x + diffVec.x * force - c2.point.x) * FORCE * (c.targetRadius/(c.targetRadius + c2.targetRadius));
+						c2.point.y += (float) (c.centroid.y + diffVec.y * force - c2.point.y) * FORCE * (c.targetRadius/(c.targetRadius + c2.targetRadius));
 
-						//c2.point.x += (float) (c.centroid.x + (c2.point.x - c.centroid.x) * force - c2.point.x) * FORCE;
-						//c2.point.y += (float) (c.centroid.y + (c2.point.y - c.centroid.y) * force - c2.point.y) * FORCE;
 						break;
 					}
 				}
@@ -123,7 +124,7 @@ public class Main extends PApplet {
 
 		}
 
-		FORCE += .01;
+		FORCE += .005;
 		FORCE = Math.min(FORCE, .1f);
 
 		background(0);
@@ -137,9 +138,10 @@ public class Main extends PApplet {
 			fill(map((float) Math.sqrt(c.targetArea / c.area), 0, 3, 200, 300), 200, (int) (100 * Math.abs(1 - Math.sqrt(c.targetArea / c.area))), 128);
 			gfx.polygon2D(c.poly);
 
-			stroke(255, 128);
+			stroke(255, 50);
 			strokeWeight(1);
-			ellipse(c.centroid.x, c.centroid.y, (float) (Math.sqrt(c.weight) * 80), (float) (Math.sqrt(c.weight) * 80));
+			noFill();
+			ellipse(c.centroid.x, c.centroid.y, c.targetRadius*2f, c.targetRadius*2f);
 
 			stroke(255, 50);
 			strokeWeight(5);

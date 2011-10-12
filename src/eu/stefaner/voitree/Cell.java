@@ -11,6 +11,7 @@ public class Cell {
 	public Vec2D centroid;
 	public float area;
 	public float targetArea;
+	public float targetRadius;
 
 	public Cell(Vec2D p, float weight) {
 		this.point = p;
