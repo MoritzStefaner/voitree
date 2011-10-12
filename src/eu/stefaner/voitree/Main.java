@@ -124,7 +124,7 @@ public class Main extends PApplet {
 		for (Cell c : cells) {
 
 			strokeWeight(1);
-			stroke(0, 50);
+			stroke(0, 120);
 			float error = (float) Math.log(c.targetArea / c.area);
 
 			fill(map((float) error, -5, 5, 0, 128), 10 * Math.abs(error), 255 - Math.abs(error) * 10);
