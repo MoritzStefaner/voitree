@@ -26,10 +26,10 @@
 
 package toxi.color;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import toxi.math.MathUtils;
 
 /**
  * A ColorTheme is a weighted collection of {@link ColorRange}s used to define

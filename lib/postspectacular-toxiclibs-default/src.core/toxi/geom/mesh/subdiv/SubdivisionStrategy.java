@@ -27,12 +27,12 @@
 
 package toxi.geom.mesh.subdiv;
 
-import java.util.Comparator;
-import java.util.List;
-
 import toxi.geom.Vec3D;
 import toxi.geom.mesh.WETriangleMesh;
 import toxi.geom.mesh.WingedEdge;
+
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * This is the abstract parent class for all subdivision strategies. Each of its

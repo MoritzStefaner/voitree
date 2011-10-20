@@ -3,11 +3,7 @@ package toxi.test.geom;
 import junit.framework.TestCase;
 import toxi.geom.Triangle3D;
 import toxi.geom.Vec3D;
-import toxi.geom.mesh.Face;
-import toxi.geom.mesh.WEFace;
-import toxi.geom.mesh.WETriangleMesh;
-import toxi.geom.mesh.WEVertex;
-import toxi.geom.mesh.WingedEdge;
+import toxi.geom.mesh.*;
 import toxi.geom.mesh.subdiv.MidpointSubdivision;
 
 public class WEMeshTest extends TestCase {

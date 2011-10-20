@@ -26,12 +26,12 @@
 
 package toxi.color;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-
 import toxi.math.MathUtils;
 import toxi.util.datatypes.FloatRange;
 import toxi.util.datatypes.GenericSet;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
 
 /**
  * A ColorRange is a set of contraints to specify possible ranges for hue,

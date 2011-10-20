@@ -1,7 +1,5 @@
 package toxi.test;
 
-import java.util.Iterator;
-
 import processing.core.PApplet;
 import toxi.geom.Rect;
 import toxi.geom.Vec2D;
@@ -10,6 +8,8 @@ import toxi.physics2d.VerletPhysics2D;
 import toxi.physics2d.behaviors.AttractionBehavior;
 import toxi.physics2d.behaviors.GravityBehavior;
 import toxi.processing.ToxiclibsSupport;
+
+import java.util.Iterator;
 
 public class AttractTest2D extends PApplet {
 

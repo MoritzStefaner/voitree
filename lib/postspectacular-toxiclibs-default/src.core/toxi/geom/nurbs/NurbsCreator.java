@@ -19,14 +19,7 @@
  */
 package toxi.geom.nurbs;
 
-import toxi.geom.Axis3D;
-import toxi.geom.GMatrix;
-import toxi.geom.GVector;
-import toxi.geom.Origin3D;
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.SingularMatrixException;
-import toxi.geom.Vec3D;
-import toxi.geom.Vec4D;
+import toxi.geom.*;
 import toxi.math.MathUtils;
 
 /**

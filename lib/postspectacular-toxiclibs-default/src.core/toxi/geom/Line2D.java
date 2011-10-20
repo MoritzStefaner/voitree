@@ -27,12 +27,11 @@
 
 package toxi.geom;
 
-import java.util.ArrayList;
-import java.util.List;
+import toxi.geom.Line2D.LineIntersection.Type;
 
 import javax.xml.bind.annotation.XmlElement;
-
-import toxi.geom.Line2D.LineIntersection.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Line2D {
 

@@ -27,40 +27,19 @@
 
 package toxi.processing;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.logging.Logger;
-
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 import processing.core.PImage;
 import toxi.color.ReadonlyTColor;
-import toxi.geom.AABB;
-import toxi.geom.AxisAlignedCylinder;
-import toxi.geom.Cone;
-import toxi.geom.Ellipse;
-import toxi.geom.Line2D;
-import toxi.geom.Line3D;
-import toxi.geom.LineStrip2D;
-import toxi.geom.LineStrip3D;
-import toxi.geom.Plane;
-import toxi.geom.Polygon2D;
-import toxi.geom.Ray2D;
-import toxi.geom.Ray3D;
-import toxi.geom.ReadonlyVec2D;
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.ReadonlyVec4D;
-import toxi.geom.Rect;
-import toxi.geom.Sphere;
-import toxi.geom.Triangle2D;
-import toxi.geom.Triangle3D;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
-import toxi.geom.Vec4D;
+import toxi.geom.*;
 import toxi.geom.mesh.Face;
 import toxi.geom.mesh.Mesh3D;
 import toxi.geom.mesh.Vertex;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * In addition to providing new drawing commands, this class provides wrappers

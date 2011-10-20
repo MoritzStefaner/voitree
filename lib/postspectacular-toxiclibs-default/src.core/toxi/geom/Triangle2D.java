@@ -27,17 +27,16 @@
 
 package toxi.geom;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import toxi.geom.Line2D.LineIntersection.Type;
+import toxi.math.MathUtils;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
-
-import toxi.geom.Line2D.LineIntersection.Type;
-import toxi.math.MathUtils;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Triangle2D implements Shape2D {

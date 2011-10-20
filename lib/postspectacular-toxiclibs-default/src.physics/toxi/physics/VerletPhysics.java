@@ -27,15 +27,15 @@
 
 package toxi.physics;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import toxi.geom.AABB;
 import toxi.geom.Vec3D;
 import toxi.physics.behaviors.GravityBehavior;
 import toxi.physics.behaviors.ParticleBehavior;
 import toxi.physics.constraints.ParticleConstraint;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * 3D particle physics engine using Verlet integration based on:

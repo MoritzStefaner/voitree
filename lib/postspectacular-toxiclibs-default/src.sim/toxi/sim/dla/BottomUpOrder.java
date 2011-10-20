@@ -27,9 +27,9 @@
 
 package toxi.sim.dla;
 
-import java.util.Comparator;
-
 import toxi.geom.Line3D;
+
+import java.util.Comparator;
 
 /**
  * This comparator sorts segments based on their midpoint's Y position. Positive

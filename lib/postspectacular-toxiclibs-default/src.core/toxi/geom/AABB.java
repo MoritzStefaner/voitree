@@ -27,16 +27,15 @@
 
 package toxi.geom;
 
-import java.util.List;
+import toxi.geom.mesh.Mesh3D;
+import toxi.geom.mesh.TriangleMesh;
+import toxi.math.MathUtils;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
-
-import toxi.geom.mesh.Mesh3D;
-import toxi.geom.mesh.TriangleMesh;
-import toxi.math.MathUtils;
+import java.util.List;
 
 /**
  * Axis-aligned bounding box with basic intersection features for Ray, AABB and

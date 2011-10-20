@@ -27,12 +27,12 @@
 
 package toxi.physics.constraints;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import toxi.geom.AABB;
 import toxi.geom.Vec3D.Axis;
 import toxi.physics.VerletParticle;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class SoftBoxConstraint implements ParticleConstraint {
 

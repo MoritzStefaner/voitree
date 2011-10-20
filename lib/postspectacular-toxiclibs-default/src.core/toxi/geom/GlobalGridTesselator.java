@@ -1,9 +1,9 @@
 package toxi.geom;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import toxi.math.MathUtils;
 
 /**
  * A concrete implementation of the abstract {@link GridTesselator} using a grid

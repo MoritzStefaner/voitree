@@ -1,25 +1,14 @@
 package toxi.test;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import toxi.geom.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import toxi.geom.AABB;
-import toxi.geom.Plane;
-import toxi.geom.Quaternion;
-import toxi.geom.Ray3D;
-import toxi.geom.Rect;
-import toxi.geom.Sphere;
-import toxi.geom.Spline2D;
-import toxi.geom.Spline3D;
-import toxi.geom.Triangle3D;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement
 public class JAXBGeomTest {

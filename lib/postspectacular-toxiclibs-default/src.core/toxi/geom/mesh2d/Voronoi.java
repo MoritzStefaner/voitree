@@ -27,14 +27,14 @@
 
 package toxi.geom.mesh2d;
 
+import toxi.geom.Polygon2D;
+import toxi.geom.Triangle2D;
+import toxi.geom.Vec2D;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-
-import toxi.geom.Polygon2D;
-import toxi.geom.Triangle2D;
-import toxi.geom.Vec2D;
 
 public class Voronoi {
 

@@ -27,9 +27,9 @@
 
 package toxi.data.csv;
 
-import java.util.ArrayList;
-
 import toxi.util.events.EventDispatcher;
+
+import java.util.ArrayList;
 
 /**
  * An event-based CSV data parser with support for field aliases. Parse events

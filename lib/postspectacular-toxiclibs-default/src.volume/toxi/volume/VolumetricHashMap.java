@@ -27,9 +27,9 @@
 
 package toxi.volume;
 
-import java.util.HashMap;
-
 import toxi.geom.Vec3D;
+
+import java.util.HashMap;
 
 public class VolumetricHashMap extends VolumetricSpace {
 

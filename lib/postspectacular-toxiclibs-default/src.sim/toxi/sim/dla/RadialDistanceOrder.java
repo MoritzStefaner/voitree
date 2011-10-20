@@ -27,10 +27,10 @@
 
 package toxi.sim.dla;
 
-import java.util.Comparator;
-
 import toxi.geom.Line3D;
 import toxi.geom.Vec3D;
+
+import java.util.Comparator;
 
 /**
  * This comparator sorts segments based on their mid-point's distance to a given

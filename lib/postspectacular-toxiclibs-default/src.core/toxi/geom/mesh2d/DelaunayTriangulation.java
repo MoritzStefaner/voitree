@@ -20,16 +20,9 @@ package toxi.geom.mesh2d;
  * DEALINGS IN THE SOFTWARE.
  */
 
-import java.util.AbstractSet;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Set;
-
 import toxi.util.datatypes.UndirectedGraph;
+
+import java.util.*;
 
 /**
  * A 2D Delaunay DelaunayTriangulation (DT) with incremental site insertion.

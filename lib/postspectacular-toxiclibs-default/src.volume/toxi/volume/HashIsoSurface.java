@@ -27,15 +27,15 @@
 
 package toxi.volume;
 
+import toxi.geom.Vec3D;
+import toxi.geom.mesh.Mesh3D;
+import toxi.geom.mesh.TriangleMesh;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import toxi.geom.Vec3D;
-import toxi.geom.mesh.Mesh3D;
-import toxi.geom.mesh.TriangleMesh;
 
 /**
  * HashMap based implementation of the IsoSurface interface. More memory

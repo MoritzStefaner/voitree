@@ -27,18 +27,17 @@
 
 package toxi.geom;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlElement;
-
 import toxi.geom.Line2D.LineIntersection;
 import toxi.geom.Line2D.LineIntersection.Type;
 import toxi.geom.mesh.Mesh3D;
 import toxi.geom.mesh.TriangleMesh;
 import toxi.math.MathUtils;
+
+import javax.xml.bind.annotation.XmlElement;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Container type for convex polygons. Implements {@link Shape2D}.

@@ -27,13 +27,13 @@
 
 package toxi.geom;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-
 import toxi.geom.mesh.Mesh3D;
 import toxi.geom.mesh.SphereFunction;
 import toxi.geom.mesh.SurfaceMeshBuilder;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Sphere extends Vec3D implements Shape3D {

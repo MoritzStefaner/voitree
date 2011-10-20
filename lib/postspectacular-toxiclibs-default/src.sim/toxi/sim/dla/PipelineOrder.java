@@ -27,9 +27,9 @@
 
 package toxi.sim.dla;
 
-import java.util.Comparator;
-
 import toxi.geom.Line3D;
+
+import java.util.Comparator;
 
 /**
  * A dummy comparator enforcing a FIFO order of segments, i.e. the order they

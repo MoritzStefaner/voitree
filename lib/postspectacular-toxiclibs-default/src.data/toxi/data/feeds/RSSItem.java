@@ -27,15 +27,14 @@
 
 package toxi.data.feeds;
 
-import java.util.ArrayList;
-import java.util.List;
+import toxi.data.feeds.util.EntityStripper;
+import toxi.data.feeds.util.Rfc822DateAdapter;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
-
-import toxi.data.feeds.util.EntityStripper;
-import toxi.data.feeds.util.Rfc822DateAdapter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RSSItem {
 

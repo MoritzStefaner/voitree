@@ -1,10 +1,10 @@
 package toxi.test.geom;
 
-import java.util.List;
-
 import junit.framework.TestCase;
 import toxi.geom.Line3D;
 import toxi.geom.Vec3D;
+
+import java.util.List;
 
 public class Vec3DTest extends TestCase {
 

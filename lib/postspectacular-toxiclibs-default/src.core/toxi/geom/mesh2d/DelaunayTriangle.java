@@ -20,12 +20,12 @@ package toxi.geom.mesh2d;
  * DEALINGS IN THE SOFTWARE.
  */
 
+import toxi.util.datatypes.ArraySet;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
-import toxi.util.datatypes.ArraySet;
 
 /**
  * A DelaunayTriangle is an immutable Set of exactly three Pnts.

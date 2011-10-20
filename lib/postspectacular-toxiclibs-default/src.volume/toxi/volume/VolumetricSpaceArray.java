@@ -27,11 +27,11 @@
 
 package toxi.volume;
 
+import toxi.geom.Vec3D;
+
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import toxi.geom.Vec3D;
 
 public class VolumetricSpaceArray extends VolumetricSpace {
 

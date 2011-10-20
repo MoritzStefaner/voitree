@@ -1,15 +1,14 @@
 package toxi.test.data;
 
-import java.io.File;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import junit.framework.TestCase;
 import toxi.data.feeds.RSSEnclosure;
 import toxi.data.feeds.RSSFeed;
 import toxi.data.feeds.RSSItem;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.File;
 
 public class RSSTest extends TestCase {
 

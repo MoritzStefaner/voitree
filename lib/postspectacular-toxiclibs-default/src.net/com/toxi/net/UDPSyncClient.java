@@ -1,6 +1,8 @@
 package com.toxi.net;
 
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.util.logging.Logger;
 
 class UDPSyncClient extends Thread {

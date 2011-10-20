@@ -27,12 +27,12 @@
 
 package toxi.color;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import toxi.math.MathUtils;
 
 /**
  * This class can be used to compute the distribution frequency of colors within

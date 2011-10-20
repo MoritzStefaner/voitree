@@ -27,10 +27,10 @@
 
 package toxi.sim.automata;
 
+import toxi.math.MathUtils;
+
 import java.math.BigInteger;
 import java.util.Random;
-
-import toxi.math.MathUtils;
 
 /**
  * An extended & customized implementation of 1D Wolfram automata, fully

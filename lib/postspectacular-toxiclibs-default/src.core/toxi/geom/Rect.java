@@ -27,13 +27,12 @@
 
 package toxi.geom;
 
-import java.util.List;
+import toxi.math.MathUtils;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-
-import toxi.math.MathUtils;
+import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Rect implements Shape2D {

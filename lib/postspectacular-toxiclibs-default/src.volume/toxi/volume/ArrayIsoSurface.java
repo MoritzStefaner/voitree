@@ -27,11 +27,11 @@
 
 package toxi.volume;
 
-import java.util.logging.Logger;
-
 import toxi.geom.Vec3D;
 import toxi.geom.mesh.Mesh3D;
 import toxi.geom.mesh.TriangleMesh;
+
+import java.util.logging.Logger;
 
 /**
  * IsoSurface class based on C version by Paul Bourke and Lingo version by

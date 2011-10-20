@@ -27,11 +27,7 @@
 
 package toxi.geom.mesh;
 
-import toxi.geom.IsectData3D;
-import toxi.geom.Ray3D;
-import toxi.geom.Triangle3D;
-import toxi.geom.TriangleIntersector;
-import toxi.geom.Vec3D;
+import toxi.geom.*;
 import toxi.math.Interpolation2D;
 import toxi.math.MathUtils;
 

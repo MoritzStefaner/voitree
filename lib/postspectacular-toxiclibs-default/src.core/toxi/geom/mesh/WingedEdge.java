@@ -27,10 +27,10 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.Line3D;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import toxi.geom.Line3D;
 
 public class WingedEdge extends Line3D {
 

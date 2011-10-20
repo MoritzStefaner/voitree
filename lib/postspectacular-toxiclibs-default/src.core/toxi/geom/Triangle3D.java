@@ -27,12 +27,12 @@
 
 package toxi.geom;
 
+import toxi.math.MathUtils;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
-
-import toxi.math.MathUtils;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Triangle3D implements Shape3D {

@@ -27,11 +27,11 @@
 
 package toxi.audio;
 
+import net.java.games.joal.AL;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-
-import net.java.games.joal.AL;
 
 /**
  * A wrapper for the actual sample data byte buffer in memory. The buffer can be

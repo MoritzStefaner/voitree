@@ -27,11 +27,11 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.Vec3D;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-
-import toxi.geom.Vec3D;
 
 /**
  * Applies a laplacian smooth function to all vertices in the mesh

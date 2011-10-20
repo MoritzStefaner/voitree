@@ -27,6 +27,10 @@
 
 package toxi.sim.dla;
 
+import toxi.geom.PointOctree;
+import toxi.geom.Vec3D;
+import toxi.math.MathUtils;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -37,10 +41,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
-
-import toxi.geom.PointOctree;
-import toxi.geom.Vec3D;
-import toxi.math.MathUtils;
 
 public class DLA {
 

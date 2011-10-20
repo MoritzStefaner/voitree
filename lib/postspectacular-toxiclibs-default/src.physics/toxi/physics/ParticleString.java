@@ -27,10 +27,10 @@
 
 package toxi.physics;
 
+import toxi.geom.Vec3D;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import toxi.geom.Vec3D;
 
 /**
  * Utility builder/grouping/management class to connect a set of particles into

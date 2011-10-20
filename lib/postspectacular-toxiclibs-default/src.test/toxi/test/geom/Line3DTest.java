@@ -1,13 +1,13 @@
 package toxi.test.geom;
 
-import java.util.HashMap;
-
 import junit.framework.TestCase;
 import toxi.geom.Line3D;
 import toxi.geom.Vec3D;
 import toxi.geom.mesh.WEVertex;
 import toxi.geom.mesh.WingedEdge;
 import toxi.math.MathUtils;
+
+import java.util.HashMap;
 
 public class Line3DTest extends TestCase {
 

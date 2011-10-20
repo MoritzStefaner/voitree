@@ -1,10 +1,10 @@
 package toxi.test;
 
-import java.util.HashMap;
-
 import junit.framework.TestCase;
 import toxi.util.datatypes.WeightedRandomEntry;
 import toxi.util.datatypes.WeightedRandomSet;
+
+import java.util.HashMap;
 
 public class WeightedRandomTest extends TestCase {
 

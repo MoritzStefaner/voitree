@@ -1,9 +1,9 @@
 package toxi.geom.nurbs;
 
-import java.util.LinkedList;
-
 import toxi.geom.Vec4D;
 import toxi.math.MathUtils;
+
+import java.util.LinkedList;
 
 /**
  * @author sg

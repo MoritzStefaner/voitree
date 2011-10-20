@@ -27,13 +27,9 @@
 
 package toxi.geom.mesh;
 
-import java.util.Collection;
+import toxi.geom.*;
 
-import toxi.geom.AABB;
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.Sphere;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import java.util.Collection;
 
 /**
  * Common interface for 3D (triangle) mesh containers.

@@ -27,12 +27,11 @@
 
 package toxi.util.datatypes;
 
-import java.util.List;
-import java.util.Random;
+import toxi.math.MathUtils;
 
 import javax.xml.bind.annotation.XmlAttribute;
-
-import toxi.math.MathUtils;
+import java.util.List;
+import java.util.Random;
 
 public class IntegerRange {
 

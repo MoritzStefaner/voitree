@@ -27,14 +27,10 @@
 
 package toxi.geom.mesh;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
 import toxi.geom.Vec3D;
 import toxi.util.FileUtils;
+
+import java.io.*;
 
 /**
  * Utility class to read binary STL files and turn them into

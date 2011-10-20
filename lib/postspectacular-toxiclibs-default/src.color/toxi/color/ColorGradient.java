@@ -27,14 +27,14 @@
 
 package toxi.color;
 
+import toxi.math.InterpolateStrategy;
+import toxi.math.LinearInterpolation;
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-
-import toxi.math.InterpolateStrategy;
-import toxi.math.LinearInterpolation;
-import toxi.math.MathUtils;
 
 /**
  * This class can be used to calculate multi-color gradients with colors

@@ -27,11 +27,11 @@
 
 package toxi.physics2d;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.geom.Vec2D;
 import toxi.physics.VerletSpring;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility builder/grouping/management class to connect a set of particles into

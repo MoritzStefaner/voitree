@@ -27,12 +27,12 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.Vec3D;
+import toxi.math.MathUtils;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-
-import toxi.geom.Vec3D;
-import toxi.math.MathUtils;
 
 /**
  * Abstract parent class for selecting mesh vertices and manipulating resulting

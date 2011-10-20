@@ -1,20 +1,12 @@
 package toxi.test;
 
-import java.util.ArrayList;
-
 import junit.framework.TestCase;
-import toxi.color.AccessCriteria;
-import toxi.color.ColorGradient;
-import toxi.color.ColorList;
-import toxi.color.ColorRange;
-import toxi.color.ColorTheme;
-import toxi.color.Hue;
-import toxi.color.NamedColor;
-import toxi.color.ReadonlyTColor;
-import toxi.color.TColor;
+import toxi.color.*;
 import toxi.color.theory.ColorTheoryRegistry;
 import toxi.color.theory.ColorTheoryStrategy;
 import toxi.math.MathUtils;
+
+import java.util.ArrayList;
 
 public class ColorTest extends TestCase {
 

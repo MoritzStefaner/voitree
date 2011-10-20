@@ -1,14 +1,9 @@
 package toxi.test.geom;
 
-import java.util.ArrayList;
-
 import junit.framework.TestCase;
-import toxi.geom.AABB;
-import toxi.geom.PointOctree;
-import toxi.geom.PointQuadtree;
-import toxi.geom.Sphere;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import toxi.geom.*;
+
+import java.util.ArrayList;
 
 public class TreeTest extends TestCase {
 

@@ -1,11 +1,11 @@
 package toxi.geom;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.geom.mesh2d.DelaunayTriangulation;
 import toxi.geom.mesh2d.Voronoi;
 import toxi.math.MathUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is an implementation of the {@link PolygonTesselator} interface and

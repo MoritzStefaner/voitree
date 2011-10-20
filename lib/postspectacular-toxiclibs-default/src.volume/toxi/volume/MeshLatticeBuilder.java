@@ -27,10 +27,6 @@
 
 package toxi.volume;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-
 import toxi.geom.AABB;
 import toxi.geom.Line3D;
 import toxi.geom.Vec3D;
@@ -40,6 +36,10 @@ import toxi.geom.mesh.WingedEdge;
 import toxi.math.ScaleMap;
 import toxi.util.datatypes.FloatRange;
 import toxi.util.datatypes.IntegerRange;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 public class MeshLatticeBuilder {
 

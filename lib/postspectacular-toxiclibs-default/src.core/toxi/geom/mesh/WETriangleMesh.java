@@ -27,23 +27,12 @@
 
 package toxi.geom.mesh;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.logging.Level;
-
-import toxi.geom.AABB;
-import toxi.geom.Line3D;
-import toxi.geom.Matrix4x4;
-import toxi.geom.Quaternion;
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import toxi.geom.*;
 import toxi.geom.mesh.subdiv.MidpointSubdivision;
 import toxi.geom.mesh.subdiv.SubdivisionStrategy;
+
+import java.util.*;
+import java.util.logging.Level;
 
 /**
  * A class to dynamically build, manipulate & export triangle meshes. Meshes are

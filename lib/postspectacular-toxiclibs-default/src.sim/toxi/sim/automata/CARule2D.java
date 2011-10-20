@@ -27,11 +27,11 @@
 
 package toxi.sim.automata;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.math.MathUtils;
 import toxi.util.datatypes.ArrayUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CARule2D implements CARule {
 

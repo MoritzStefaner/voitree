@@ -19,11 +19,11 @@
  */
 package toxi.geom.nurbs;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import toxi.geom.Vec3D;
 import toxi.geom.Vec4D;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Convenience class to create dynamically NurbsCurves.

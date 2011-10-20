@@ -26,15 +26,15 @@
  */
 package toxi.geom.mesh;
 
+import toxi.geom.Vec3D;
+import toxi.util.FileUtils;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import toxi.geom.Vec3D;
-import toxi.util.FileUtils;
 
 /**
  * Standard Polygon Format (PLY) mesh exporter for toxiclibs

@@ -27,12 +27,12 @@
 
 package toxi.geom;
 
+import toxi.math.InterpolateStrategy;
+import toxi.math.MathUtils;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-
-import toxi.math.InterpolateStrategy;
-import toxi.math.MathUtils;
 
 /**
  * Quaternion implementation with SLERP based on http://is.gd/2n9s

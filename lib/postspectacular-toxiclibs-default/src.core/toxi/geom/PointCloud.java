@@ -27,11 +27,11 @@
 
 package toxi.geom;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import toxi.math.MathUtils;
 
 public class PointCloud implements Iterable<Vec3D> {
 

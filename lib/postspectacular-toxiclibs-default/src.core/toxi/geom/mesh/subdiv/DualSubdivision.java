@@ -27,11 +27,11 @@
 
 package toxi.geom.mesh.subdiv;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.geom.Vec3D;
 import toxi.geom.mesh.WingedEdge;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This subdivision strategy splits an edge in three equal parts using two split

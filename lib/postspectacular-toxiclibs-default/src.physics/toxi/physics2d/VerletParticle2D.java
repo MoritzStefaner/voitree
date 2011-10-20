@@ -27,14 +27,14 @@
 
 package toxi.physics2d;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.geom.ReadonlyVec2D;
 import toxi.geom.Rect;
 import toxi.geom.Vec2D;
 import toxi.physics2d.behaviors.ParticleBehavior2D;
 import toxi.physics2d.constraints.ParticleConstraint2D;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An individual 3D particle for use by the VerletPhysics and VerletSpring

@@ -27,10 +27,10 @@
 
 package toxi.util.datatypes;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import toxi.math.MathUtils;
 
 /**
  * This class provides a generic random-weight distribution of arbitary objects.

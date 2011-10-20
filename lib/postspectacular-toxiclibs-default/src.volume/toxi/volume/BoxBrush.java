@@ -27,9 +27,9 @@
 
 package toxi.volume;
 
-import java.util.logging.Level;
-
 import toxi.math.MathUtils;
+
+import java.util.logging.Level;
 
 public class BoxBrush extends VolumetricBrush {
 

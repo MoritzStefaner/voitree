@@ -27,9 +27,9 @@
 
 package toxi.geom.mesh.subdiv;
 
-import java.util.Comparator;
-
 import toxi.geom.mesh.WingedEdge;
+
+import java.util.Comparator;
 
 /**
  * Comparator used by {@link SubdivisionStrategy#getEdgeOrdering()} to define

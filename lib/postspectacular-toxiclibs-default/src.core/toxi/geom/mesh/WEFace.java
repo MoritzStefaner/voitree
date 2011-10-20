@@ -27,10 +27,10 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.Vec2D;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import toxi.geom.Vec2D;
 
 public final class WEFace extends Face {
 

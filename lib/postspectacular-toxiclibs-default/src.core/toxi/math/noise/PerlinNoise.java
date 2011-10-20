@@ -27,9 +27,9 @@
 
 package toxi.math.noise;
 
-import java.util.Random;
-
 import toxi.math.SinCosLUT;
+
+import java.util.Random;
 
 /**
  * PERLIN NOISE taken from the java port I originally did for PApplet, based on

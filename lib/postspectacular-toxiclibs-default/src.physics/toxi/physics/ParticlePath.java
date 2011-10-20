@@ -27,11 +27,11 @@
 
 package toxi.physics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import toxi.geom.Spline3D;
 import toxi.geom.Vec3D;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is used as a builder to dynamically construct a

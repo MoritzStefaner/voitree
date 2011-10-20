@@ -27,13 +27,12 @@
 
 package toxi.geom;
 
-import java.util.Random;
-
-import javax.xml.bind.annotation.XmlAttribute;
-
 import toxi.math.InterpolateStrategy;
 import toxi.math.MathUtils;
 import toxi.math.ScaleMap;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import java.util.Random;
 
 /**
  * Comprehensive 3D vector class with additional basic intersection and

@@ -27,9 +27,9 @@
 
 package toxi.util.datatypes;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
 import toxi.math.MathUtils;
+
+import javax.xml.bind.annotation.XmlAttribute;
 
 public class BiasedIntegerRange extends IntegerRange {
 

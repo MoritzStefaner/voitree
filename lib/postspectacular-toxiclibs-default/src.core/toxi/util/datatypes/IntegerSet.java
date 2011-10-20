@@ -27,9 +27,9 @@
 
 package toxi.util.datatypes;
 
-import java.util.Random;
-
 import toxi.math.MathUtils;
+
+import java.util.Random;
 
 public class IntegerSet {
 

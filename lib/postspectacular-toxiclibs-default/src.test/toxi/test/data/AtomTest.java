@@ -1,17 +1,16 @@
 package toxi.test.data;
 
-import java.io.File;
-import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import junit.framework.TestCase;
 import toxi.data.feeds.AtomEntry;
 import toxi.data.feeds.AtomFeed;
 import toxi.data.feeds.AtomLink;
 import toxi.data.feeds.util.Iso8601DateAdapter;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.File;
+import java.util.List;
 
 public class AtomTest extends TestCase {
 

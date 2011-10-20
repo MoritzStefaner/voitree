@@ -1,12 +1,7 @@
 package toxi.test;
 
 import processing.core.PApplet;
-import toxi.geom.Circle;
-import toxi.geom.Ray3D;
-import toxi.geom.Ray3DIntersector;
-import toxi.geom.Triangle2D;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import toxi.geom.*;
 import toxi.processing.ToxiclibsSupport;
 
 public class Circle3 extends PApplet {

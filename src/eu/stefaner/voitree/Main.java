@@ -1,11 +1,7 @@
 package eu.stefaner.voitree;
 
 import processing.core.PApplet;
-import toxi.geom.Polygon2D;
-import toxi.geom.PolygonClipper2D;
-import toxi.geom.Rect;
-import toxi.geom.SutherlandHodgemanClipper;
-import toxi.geom.Vec2D;
+import toxi.geom.*;
 import toxi.processing.ToxiclibsSupport;
 
 public class Main extends PApplet {

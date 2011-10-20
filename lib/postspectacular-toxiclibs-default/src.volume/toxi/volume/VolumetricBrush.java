@@ -27,10 +27,10 @@
 
 package toxi.volume;
 
-import java.util.logging.Logger;
-
 import toxi.geom.Vec3D;
 import toxi.math.MathUtils;
+
+import java.util.logging.Logger;
 
 public abstract class VolumetricBrush {
 

@@ -1,11 +1,7 @@
 package toxi.test.geom;
 
 import junit.framework.TestCase;
-import toxi.geom.Ray3D;
-import toxi.geom.Sphere;
-import toxi.geom.SphereIntersectorReflector;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
+import toxi.geom.*;
 import toxi.math.MathUtils;
 
 public class SphereTest extends TestCase {

@@ -1,13 +1,13 @@
 package toxi.test;
 
-import java.util.Iterator;
-
 import processing.core.PApplet;
 import toxi.geom.Vec3D;
 import toxi.physics.ParticleString;
 import toxi.physics.VerletParticle;
 import toxi.physics.VerletPhysics;
 import toxi.physics.behaviors.AttractionBehavior;
+
+import java.util.Iterator;
 
 public class PhysTest extends PApplet {
 

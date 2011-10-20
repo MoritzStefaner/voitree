@@ -27,16 +27,12 @@
 
 package toxi.sim.dla;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import toxi.geom.Line3D;
 import toxi.geom.Vec3D;
+
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DLAGuideLines {
 

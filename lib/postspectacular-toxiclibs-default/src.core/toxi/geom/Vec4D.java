@@ -27,11 +27,11 @@
 
 package toxi.geom;
 
-import javax.xml.bind.annotation.XmlAttribute;
-
 import toxi.math.InterpolateStrategy;
 import toxi.math.MathUtils;
 import toxi.math.ScaleMap;
+
+import javax.xml.bind.annotation.XmlAttribute;
 
 public class Vec4D implements ReadonlyVec4D, Cloneable {
 

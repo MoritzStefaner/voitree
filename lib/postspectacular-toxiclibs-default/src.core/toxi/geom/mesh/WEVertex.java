@@ -27,13 +27,13 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.ReadonlyVec3D;
+import toxi.geom.Vec3D;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.Vec3D;
 
 public class WEVertex extends Vertex {
 

@@ -1,13 +1,13 @@
 package toxi.test.geom;
 
-import java.util.ArrayList;
-
 import junit.framework.TestCase;
 import toxi.geom.Vec3D;
 import toxi.geom.mesh.Face;
 import toxi.geom.mesh.STLReader;
 import toxi.geom.mesh.TriangleMesh;
 import toxi.geom.mesh.Vertex;
+
+import java.util.ArrayList;
 
 public class TriangleMeshTest extends TestCase {
 

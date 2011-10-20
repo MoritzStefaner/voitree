@@ -26,10 +26,10 @@
 
 package toxi.color;
 
+import toxi.math.MathUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import toxi.math.MathUtils;
 
 /**
  * This class defines color hues and allows them to be access by name. There are

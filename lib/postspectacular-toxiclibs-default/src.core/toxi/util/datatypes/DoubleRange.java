@@ -27,13 +27,12 @@
 
 package toxi.util.datatypes;
 
+import toxi.math.MathUtils;
+
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-
-import javax.xml.bind.annotation.XmlAttribute;
-
-import toxi.math.MathUtils;
 
 public class DoubleRange {
 

@@ -19,25 +19,19 @@
  */
 package toxi.audio;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.IntBuffer;
-import java.util.ArrayList;
-import java.util.logging.Logger;
-
-import javax.sound.sampled.UnsupportedAudioFileException;
-
-import net.java.games.joal.AL;
-import net.java.games.joal.ALC;
-import net.java.games.joal.ALCcontext;
-import net.java.games.joal.ALCdevice;
-import net.java.games.joal.ALException;
-import net.java.games.joal.ALFactory;
+import net.java.games.joal.*;
 import net.java.games.joal.eax.EAX;
 import net.java.games.joal.eax.EAXConstants;
 import net.java.games.joal.eax.EAXFactory;
 import net.java.games.joal.util.WAVData;
 import net.java.games.joal.util.WAVLoader;
+
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.IntBuffer;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  * <a href="https://joal.dev.java.net/">JOAL</a> convenience wrapper. Full

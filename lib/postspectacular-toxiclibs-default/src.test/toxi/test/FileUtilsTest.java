@@ -1,10 +1,10 @@
 package toxi.test;
 
-import java.util.Iterator;
-
 import junit.framework.TestCase;
 import toxi.util.FileSequenceDescriptor;
 import toxi.util.FileUtils;
+
+import java.util.Iterator;
 
 public class FileUtilsTest extends TestCase {
 

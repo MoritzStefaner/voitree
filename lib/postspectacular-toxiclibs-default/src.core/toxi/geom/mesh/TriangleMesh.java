@@ -27,6 +27,9 @@
 
 package toxi.geom.mesh;
 
+import toxi.geom.*;
+import toxi.math.MathUtils;
+
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,20 +37,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import toxi.geom.AABB;
-import toxi.geom.Intersector3D;
-import toxi.geom.IsectData3D;
-import toxi.geom.Matrix4x4;
-import toxi.geom.Quaternion;
-import toxi.geom.Ray3D;
-import toxi.geom.ReadonlyVec3D;
-import toxi.geom.Sphere;
-import toxi.geom.Triangle3D;
-import toxi.geom.TriangleIntersector;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
-import toxi.math.MathUtils;
 
 /**
  * An extensible class to dynamically build, manipulate & export triangle

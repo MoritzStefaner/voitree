@@ -1,11 +1,11 @@
 package toxi.test;
 
-import java.util.Random;
-
 import junit.framework.TestCase;
 import toxi.util.datatypes.ArrayUtil;
 import toxi.util.datatypes.GenericSet;
 import toxi.util.datatypes.IntegerRange;
+
+import java.util.Random;
 
 public class ArrayUtilTest extends TestCase {
 

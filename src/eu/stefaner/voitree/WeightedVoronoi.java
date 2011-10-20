@@ -1,14 +1,12 @@
 package eu.stefaner.voitree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import toxi.geom.Polygon2D;
 import toxi.geom.Vec2D;
 import toxi.geom.mesh2d.DelaunayTriangle;
 import toxi.geom.mesh2d.DelaunayVertex;
 import toxi.geom.mesh2d.Voronoi;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WeightedVoronoi extends Voronoi {
 
