@@ -2,6 +2,7 @@
 package com.stephanthiel.tesselation.voronoi.centroidal;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import toxi.geom.Vec2D;
 import toxi.math.MathUtils;
@@ -16,17 +17,11 @@ import wblut.geom2D.WB_XY;
  * http://people.sc.fsu.edu/~jburkardt/cpp_src/cvt/cvt.html
  */
 
-public class SampleBasedCVT
+public class SampleBasedCVT extends CentroidalVoronoiTesselation
 {
 	public static final int DEFAULT_BATCH_SIZE = 1000;
 	public static final int DEFAULT_NUM_SAMPLES = 10000;
 	public static final int DEFAULT_NUM_IT = 40;
-
-	/*
-	 * the dimension of the voronoi tesselation
-	 */
-	private int mWidth;
-	private int mHeight;
 
 	/*
 	 * batch size for sampling (to determine voronoi cell centers)
@@ -38,78 +33,64 @@ public class SampleBasedCVT
 	 * precise
 	 */
 	private int mNumSamples;
-
+	
 	/*
-	 * number of iterations to do
-	 */
-	private int mItMax;
-
-	/*
-	 * tracks iterations
-	 */
-	private int mItNum;
-
-	/*
-	 * the generators on which the correction will be done
-	 */
-	private ArrayList<Vec2D> mGenerators;
-
-	/*
-	 * 
+	 * just for finally drawing edges
 	 */
 	private WB_Voronoi2D mVoronoi;
-
+	
+	/*
+	 * storing edges for drawing
+	 */
 	private ArrayList<WB_IndexedBisector2D> mEdges;
 
 	public SampleBasedCVT(int width, int height)
 	{
 		mWidth = width;
 		mHeight = height;
+		mMaxIt = DEFAULT_NUM_IT;
 
 		mBatchSize = DEFAULT_BATCH_SIZE;
 		mNumSamples = DEFAULT_NUM_SAMPLES;
-		mItMax = DEFAULT_NUM_IT;
 
-		mGenerators = new ArrayList<Vec2D>();
 		mVoronoi = new WB_Voronoi2D();
 
 		reset();
 	}
 
-	public void cvt()
+	public ArrayList<Vec2D> cvtRandomSamples( int n_now )
 	{
-		mItNum = 0;
-		while ( mItNum < mItMax )
-		{
-			System.out.print( "iteration " + mItNum + ":\t" );
-			cvtIterate();
-			mItNum++;
-		}
-		updateEdges();
+		ArrayList<Vec2D> samplePoints = new ArrayList<Vec2D>();
+		for ( int i = 0; i < n_now; i++ )
+			samplePoints.add( Vec2D.randomVector().scaleSelf( MathUtils.random( mWidth / 2 ), MathUtils.random( mHeight / 2 ) ).addSelf(
+				mWidth / 2,
+				mHeight / 2 ) );
+		return samplePoints;
 	}
 
 	/*
-	 * do one iteration at a time while updating the internal iteration tracking
-	 * useful for animations/step-wise applications of the algorithm
+	 * TODO: kd-tree!
 	 */
-	public void cvtOnce()
+	public void findNearest( List<Vec2D> s, List<Vec2D> r, int[] nearest )
 	{
-		cvtIterate();
-		mItNum++;
-		updateEdges();
+		float dist_sq_min = Float.MAX_VALUE;
+		for ( int i = 0; i < s.size(); i++ )
+		{
+			nearest[i] = -1;
+			for ( int j = 0; j < r.size(); j++ )
+			{
+				float dist_sq = r.get( j ).distanceToSquared( s.get( i ) );
+				if ( j == 0 || dist_sq < dist_sq_min )
+				{
+					dist_sq_min = dist_sq;
+					nearest[i] = j;
+				}
+			}
+		}
 	}
 
-	public void reset()
-	{
-		mItNum = 0;
-	}
-
-	public boolean done()
-	{
-		return mItNum >= mItMax;
-	}
-
-	private void cvtIterate()
+	@Override
+	protected void cvtIterate()
 	{
 		/*
 		 * Take each generator as the first sample point for its region. This
@@ -179,49 +160,17 @@ public class SampleBasedCVT
 		 * Normalize the discrete energy estimate.
 		 */
 		energy /= mNumSamples;
-
-//		System.out.println( it_diff + "\t" + energy );
 	}
 
-	public ArrayList<Vec2D> cvtRandomSamples( int n_now )
-	{
-		ArrayList<Vec2D> samplePoints = new ArrayList<Vec2D>();
-		for ( int i = 0; i < n_now; i++ )
-			samplePoints.add( Vec2D.randomVector().scaleSelf( MathUtils.random( mWidth / 2 ), MathUtils.random( mHeight / 2 ) ).addSelf(
-				mWidth / 2,
-				mHeight / 2 ) );
-		return samplePoints;
-	}
-
-	/*
-	 * kd-tree!
-	 */
-	public void findNearest( ArrayList<Vec2D> s, ArrayList<Vec2D> r, int[] nearest )
-	{
-		float dist_sq_min = Float.MAX_VALUE;
-		for ( int i = 0; i < s.size(); i++ )
-		{
-			nearest[i] = -1;
-			for ( int j = 0; j < r.size(); j++ )
-			{
-				float dist_sq = r.get( j ).distanceToSquared( s.get( i ) );
-				if ( j == 0 || dist_sq < dist_sq_min )
-				{
-					dist_sq_min = dist_sq;
-					nearest[i] = j;
-				}
-			}
-		}
-	}
-
-	private void updateEdges()
+	@Override
+	public void generate()
 	{
 		WB_XY[] wb_gen = new WB_XY[mGenerators.size()];
 		for ( int i = 0; i < wb_gen.length; i++ )
 			wb_gen[i] = new WB_XY( mGenerators.get( i ).x, mGenerators.get( i ).y );
 		mEdges = mVoronoi.generateVoronoi( 0, mWidth, 0, mHeight, wb_gen );
 	}
-
+	
 	public int width()
 	{
 		return mWidth;
@@ -264,29 +213,18 @@ public class SampleBasedCVT
 
 	public int itMax()
 	{
-		return mItMax;
+		return mMaxIt;
 	}
 
 	public void setItMax( int itMax )
 	{
-		mItMax = itMax;
-	}
-
-	public ArrayList<Vec2D> generators()
-	{
-		return mGenerators;
-	}
-
-	public void setGenerators( ArrayList<Vec2D> generators )
-	{
-		mGenerators.clear();
-		mGenerators.addAll( generators );
+		mMaxIt = itMax;
 	}
 
 	public ArrayList<WB_IndexedBisector2D> edges()
 	{
 		if ( mEdges == null )
-			updateEdges();
+			generate();
 		return mEdges;
 	}
 }

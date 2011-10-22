@@ -4,8 +4,8 @@ package com.stephanthiel;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.stephanthiel.tesselation.voronoi.weighted.AdditivelyWeightedPowerVoronoi;
-import com.stephanthiel.tesselation.voronoi.weighted.AdditivelyWeightedVoronoi;
+import com.stephanthiel.tesselation.voronoi.weighted.PWVoronoi;
+import com.stephanthiel.tesselation.voronoi.weighted.AWVoronoi;
 import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
 
 import processing.core.PApplet;
@@ -16,8 +16,8 @@ public class VoronoiTest extends PApplet
 {
 	public static final int NUM = 10;// number of generators
 
-	public AdditivelyWeightedVoronoi voronoi1;
-	public AdditivelyWeightedPowerVoronoi voronoi2;
+	public AWVoronoi voronoi1;
+	public PWVoronoi voronoi2;
 
 	public void setup()
 	{
@@ -30,7 +30,7 @@ public class VoronoiTest extends PApplet
 		for ( int i = 0; i < NUM; i++ )
 			generators1.add( new WeightedGenerator( random( 15, width - 15 ), random( 15, height - 15 ), random( 1, 100 ) ) );
 
-		voronoi1 = new AdditivelyWeightedVoronoi( width, height );
+		voronoi1 = new AWVoronoi( width, height );
 		voronoi1.setGenerators( generators1 );
 		voronoi1.generate();
 
@@ -38,7 +38,7 @@ public class VoronoiTest extends PApplet
 		ArrayList<WeightedGenerator> generators2 = new ArrayList<WeightedGenerator>();
 		for ( int i = 0; i < NUM; i++ )
 			generators2.add( new WeightedGenerator( generators1.get( i ), random( 1, 10000 ) ) );
-		voronoi2 = new AdditivelyWeightedPowerVoronoi( width, height );
+		voronoi2 = new PWVoronoi( width, height );
 		voronoi2.setGenerators( generators2 );
 		voronoi2.generate();
 

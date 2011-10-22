@@ -27,5 +27,8 @@ public abstract class VoronoiTesselation
 		return mGenerators;
 	}
 	
+	/*
+	 * implement the generation of the voronoi diagram
+	 */
 	public abstract void generate();
 }
