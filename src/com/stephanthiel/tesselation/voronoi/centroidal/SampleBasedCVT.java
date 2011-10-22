@@ -1,5 +1,5 @@
 
-package com.stephanthiel;
+package com.stephanthiel.tesselation.voronoi.centroidal;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ import wblut.geom2D.WB_XY;
  * http://people.sc.fsu.edu/~jburkardt/cpp_src/cvt/cvt.html
  */
 
-public class CVT
+public class SampleBasedCVT
 {
 	public static final int DEFAULT_BATCH_SIZE = 1000;
 	public static final int DEFAULT_NUM_SAMPLES = 10000;
@@ -61,7 +61,7 @@ public class CVT
 
 	private ArrayList<WB_IndexedBisector2D> mEdges;
 
-	public CVT(int width, int height)
+	public SampleBasedCVT(int width, int height)
 	{
 		mWidth = width;
 		mHeight = height;

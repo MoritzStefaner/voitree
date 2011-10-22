@@ -4,9 +4,9 @@ package com.stephanthiel;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.stephanthiel.voronoi.WeightedGenerator;
-import com.stephanthiel.voronoi.tesselation.AdditivelyWeightedPowerVoronoi;
-import com.stephanthiel.voronoi.tesselation.AdditivelyWeightedVoronoi;
+import com.stephanthiel.tesselation.voronoi.weighted.AdditivelyWeightedPowerVoronoi;
+import com.stephanthiel.tesselation.voronoi.weighted.AdditivelyWeightedVoronoi;
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
 
 import processing.core.PApplet;
 import toxi.geom.Line2D;
