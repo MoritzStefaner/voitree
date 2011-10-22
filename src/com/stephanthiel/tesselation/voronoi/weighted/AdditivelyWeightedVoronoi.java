@@ -1,14 +1,14 @@
-package com.stephanthiel.voronoi.tesselation;
+package com.stephanthiel.tesselation.voronoi.weighted;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import toxi.geom.Vec2D;
 import toxi.math.MathUtils;
 
-import com.stephanthiel.voronoi.WeightSort;
-import com.stephanthiel.voronoi.WeightedGenerator;
+import com.stephanthiel.tesselation.HyperbolicArcEdgeTesselation;
+import com.stephanthiel.tesselation.sort.WeightSort;
 
-public class AdditivelyWeightedVoronoi extends HyperbolicTesselation
+public class AdditivelyWeightedVoronoi extends HyperbolicArcEdgeTesselation
 {
 	public AdditivelyWeightedVoronoi( int width, int height )
 	{

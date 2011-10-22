@@ -1,5 +1,5 @@
 
-package com.stephanthiel.voronoi.tesselation;
+package com.stephanthiel.tesselation.voronoi.weighted;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,11 +8,11 @@ import java.util.List;
 import toxi.geom.Line2D;
 import toxi.geom.Vec2D;
 
-import com.stephanthiel.voronoi.WeightSort;
-import com.stephanthiel.voronoi.WeightedGenerator;
-import com.stephanthiel.voronoi.XAxisSort;
+import com.stephanthiel.tesselation.LinearEdgeTesselation;
+import com.stephanthiel.tesselation.sort.WeightSort;
+import com.stephanthiel.tesselation.sort.XAxisSort;
 
-public class AdditivelyWeightedPowerVoronoi extends EuclideanTesselation
+public class AdditivelyWeightedPowerVoronoi extends LinearEdgeTesselation
 {
 	List<WeightedGenerator> kgen;
 

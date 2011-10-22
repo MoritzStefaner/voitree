@@ -1,6 +1,8 @@
-package com.stephanthiel.voronoi;
+package com.stephanthiel.tesselation.sort;
 
 import java.util.Comparator;
+
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
 
 import toxi.geom.Vec2D;
 

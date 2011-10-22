@@ -1,15 +1,17 @@
 
 package com.stephanthiel;
 
+import com.stephanthiel.tesselation.voronoi.centroidal.SampleBasedCVT;
+
 import processing.core.PApplet;
 import toxi.geom.Vec2D;
 import wblut.geom2D.WB_IndexedBisector2D;
 
-public class CVT_test extends PApplet
+public class CVTTest extends PApplet
 {
 	public static final int DEFAULT_NUM_GENERATORS = 10;
 
-	public CVT cvt;
+	public SampleBasedCVT cvt;
 
 	public void setup()
 	{
@@ -17,7 +19,7 @@ public class CVT_test extends PApplet
 		smooth();
 		background( 255 );
 
-		cvt = new CVT( width, height );
+		cvt = new SampleBasedCVT( width, height );
 		cvt.setGenerators( cvt.cvtRandomSamples( DEFAULT_NUM_GENERATORS ) );
 
 		fill( 0 );
@@ -49,7 +51,7 @@ public class CVT_test extends PApplet
 
 	public static void main( String[] args )
 	{
-		PApplet.main( new String[] { CVT_test.class.getName() } );
+		PApplet.main( new String[] { CVTTest.class.getName() } );
 
 	}
 

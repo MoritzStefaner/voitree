@@ -1,9 +1,8 @@
-package com.stephanthiel.voronoi.tesselation;
+package com.stephanthiel.tesselation.voronoi.weighted;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.stephanthiel.voronoi.WeightedGenerator;
 
 import toxi.geom.Vec2D;
 

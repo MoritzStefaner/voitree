@@ -1,10 +1,12 @@
-package com.stephanthiel.voronoi.tesselation;
+package com.stephanthiel.tesselation;
 
 import java.util.List;
 import toxi.geom.Vec2D;
-import com.stephanthiel.voronoi.WeightedGenerator;
 
-public abstract class HyperbolicTesselation extends WeightedVoronoiTesselation
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedVoronoiTesselation;
+
+public abstract class HyperbolicArcEdgeTesselation extends WeightedVoronoiTesselation
 {
 	protected List<Vec2D> mEdgeVertices;
 	

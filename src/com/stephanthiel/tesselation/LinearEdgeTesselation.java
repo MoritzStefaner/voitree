@@ -1,14 +1,15 @@
-package com.stephanthiel.voronoi.tesselation;
+package com.stephanthiel.tesselation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.stephanthiel.voronoi.WeightedGenerator;
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedVoronoiTesselation;
 
 import toxi.geom.Line2D;
 import toxi.geom.Vec2D;
 
-public abstract class EuclideanTesselation extends WeightedVoronoiTesselation
+public abstract class LinearEdgeTesselation extends WeightedVoronoiTesselation
 {
 	protected List<Line2D> mEdges;
 	

@@ -1,5 +1,5 @@
 
-package com.stephanthiel.voronoi;
+package com.stephanthiel.tesselation.voronoi.weighted;
 
 import toxi.geom.Vec2D;
 
