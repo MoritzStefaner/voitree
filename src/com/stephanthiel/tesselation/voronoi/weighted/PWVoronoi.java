@@ -12,11 +12,11 @@ import com.stephanthiel.tesselation.LinearEdgeTesselation;
 import com.stephanthiel.tesselation.sort.WeightSort;
 import com.stephanthiel.tesselation.sort.XAxisSort;
 
-public class AdditivelyWeightedPowerVoronoi extends LinearEdgeTesselation
+public class PWVoronoi extends LinearEdgeTesselation
 {
 	List<WeightedGenerator> kgen;
 
-	public AdditivelyWeightedPowerVoronoi(int width, int height)
+	public PWVoronoi(int width, int height)
 	{
 		mWidth = width;
 		mHeight = height;

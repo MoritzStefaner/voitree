@@ -8,9 +8,9 @@ import toxi.math.MathUtils;
 import com.stephanthiel.tesselation.HyperbolicArcEdgeTesselation;
 import com.stephanthiel.tesselation.sort.WeightSort;
 
-public class AdditivelyWeightedVoronoi extends HyperbolicArcEdgeTesselation
+public class AWVoronoi extends HyperbolicArcEdgeTesselation
 {
-	public AdditivelyWeightedVoronoi( int width, int height )
+	public AWVoronoi( int width, int height )
 	{
 		mWidth = width;
 		mHeight = height;

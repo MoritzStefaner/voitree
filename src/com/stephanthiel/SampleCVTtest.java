@@ -7,7 +7,7 @@ import processing.core.PApplet;
 import toxi.geom.Vec2D;
 import wblut.geom2D.WB_IndexedBisector2D;
 
-public class CVTTest extends PApplet
+public class SampleCVTtest extends PApplet
 {
 	public static final int DEFAULT_NUM_GENERATORS = 10;
 
@@ -51,7 +51,7 @@ public class CVTTest extends PApplet
 
 	public static void main( String[] args )
 	{
-		PApplet.main( new String[] { CVTTest.class.getName() } );
+		PApplet.main( new String[] { SampleCVTtest.class.getName() } );
 
 	}
 
