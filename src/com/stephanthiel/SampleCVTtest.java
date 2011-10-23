@@ -20,11 +20,11 @@ public class SampleCVTtest extends PApplet
 		background( 255 );
 
 		cvt = new SampleBasedCVT( width, height );
-		cvt.setGenerators( cvt.cvtRandomSamples( DEFAULT_NUM_GENERATORS ) );
+		cvt.setCells( cvt.cvtRandomSamples( DEFAULT_NUM_GENERATORS ) );
 
 		fill( 0 );
 		noStroke();
-		for ( Vec2D v : cvt.generators() )
+		for ( Vec2D v : cvt.cells() )
 			ellipse( v.x, v.y, 5, 5 );
 
 		cvt.reset();
@@ -36,7 +36,7 @@ public class SampleCVTtest extends PApplet
 		background( 255 );
 		fill( 0 );
 		noStroke();
-		for ( Vec2D gen : cvt.generators() )
+		for ( Vec2D gen : cvt.cells() )
 			ellipse( gen.x, gen.y, 3, 3 );
 
 		noFill();

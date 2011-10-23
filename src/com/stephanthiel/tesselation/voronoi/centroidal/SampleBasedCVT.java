@@ -4,6 +4,8 @@ package com.stephanthiel.tesselation.voronoi.centroidal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stephanthiel.tesselation.voronoi.VoronoiCell;
+
 import toxi.geom.Vec2D;
 import toxi.math.MathUtils;
 import wblut.geom2D.WB_IndexedBisector2D;
@@ -71,15 +73,15 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 	/*
 	 * TODO: kd-tree!
 	 */
-	public void findNearest( List<Vec2D> s, List<Vec2D> r, int[] nearest )
+	public void findNearest( List<Vec2D> samples, List<VoronoiCell> cells, int[] nearest )
 	{
 		float dist_sq_min = Float.MAX_VALUE;
-		for ( int i = 0; i < s.size(); i++ )
+		for ( int i = 0; i < samples.size(); i++ )
 		{
 			nearest[i] = -1;
-			for ( int j = 0; j < r.size(); j++ )
+			for ( int j = 0; j < cells.size(); j++ )
 			{
-				float dist_sq = r.get( j ).distanceToSquared( s.get( i ) );
+				float dist_sq = cells.get( j ).distanceToSquared( samples.get( i ) );
 				if ( j == 0 || dist_sq < dist_sq_min )
 				{
 					dist_sq_min = dist_sq;
@@ -98,13 +100,13 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 		 * guaranteeing that no region is completely missed by the sampling.
 		 */
 		ArrayList<Vec2D> r2 = new ArrayList<Vec2D>();
-		for ( Vec2D v : mGenerators )
+		for ( Vec2D v : mCells )
 			r2.add( v.copy() );
 
 		int[] nearest = new int[mNumSamples];
 
-		int[] count = new int[mGenerators.size()];
-		for ( int i = 0; i < mGenerators.size(); i++ )
+		int[] count = new int[mCells.size()];
+		for ( int i = 0; i < mCells.size(); i++ )
 			count[i] = 1;
 
 		/*
@@ -123,7 +125,7 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 			 * Find the index N of the nearest cell generator to each sample
 			 * point S.
 			 */
-			findNearest( s, mGenerators, nearest );
+			findNearest( s, mCells, nearest );
 
 			/*
 			 * Add S to the centroid associated with generator N.
@@ -132,7 +134,7 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 			{
 				int j2 = nearest[j];
 				r2.get( j2 ).addSelf( s.get( j ) );
-				energy += mGenerators.get( j2 ).sub( s.get( j ) ).magSquared();
+				energy += mCells.get( j2 ).sub( s.get( j ) ).magSquared();
 				count[j2]++;
 			}
 		}
@@ -148,13 +150,13 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 		 */
 		double it_diff = 0.0;
 		for ( int i = 0; i < r2.size(); i++ )
-			it_diff += r2.get( i ).distanceTo( mGenerators.get( i ) );
+			it_diff += r2.get( i ).distanceTo( mCells.get( i ) );
 
 		/*
 		 * Replace the generators by the centroids.
 		 */
-		for ( int i = 0; i < mGenerators.size(); i++ )
-			mGenerators.get( i ).set( r2.get( i ) );
+		for ( int i = 0; i < mCells.size(); i++ )
+			mCells.get( i ).set( r2.get( i ) );
 
 		/*
 		 * Normalize the discrete energy estimate.
@@ -165,9 +167,9 @@ public class SampleBasedCVT extends CentroidalVoronoiTesselation
 	@Override
 	public void generate()
 	{
-		WB_XY[] wb_gen = new WB_XY[mGenerators.size()];
+		WB_XY[] wb_gen = new WB_XY[mCells.size()];
 		for ( int i = 0; i < wb_gen.length; i++ )
-			wb_gen[i] = new WB_XY( mGenerators.get( i ).x, mGenerators.get( i ).y );
+			wb_gen[i] = new WB_XY( mCells.get( i ).x, mCells.get( i ).y );
 		mEdges = mVoronoi.generateVoronoi( 0, mWidth, 0, mHeight, wb_gen );
 	}
 	

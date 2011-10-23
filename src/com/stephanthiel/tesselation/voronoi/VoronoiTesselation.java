@@ -9,22 +9,26 @@ import toxi.geom.Vec2D;
 
 public abstract class VoronoiTesselation
 {
-	protected List<Vec2D> mGenerators;
+	protected List<VoronoiCell> mCells;
+	
 	protected int mWidth;
 	protected int mHeight;
 	
-	public void setGenerators( List<Vec2D> generators )
+	public void setCells( List<Vec2D> generators )
 	{
-		if (mGenerators == null)
-			mGenerators = new ArrayList<Vec2D>();
-		mGenerators.clear();
+		if (mCells == null)
+			mCells = new ArrayList<VoronoiCell>();
+		mCells.clear();
 		for ( Vec2D g : generators )
-			mGenerators.add( g.copy() );
+			if ( g instanceof VoronoiCell )
+				mCells.add( (VoronoiCell)g );
+			else
+				mCells.add( new VoronoiCell( g ));
 	}
 	
-	public List<Vec2D> generators()
+	public List<VoronoiCell> cells()
 	{
-		return mGenerators;
+		return mCells;
 	}
 	
 	/*
