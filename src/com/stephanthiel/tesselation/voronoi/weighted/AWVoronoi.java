@@ -42,8 +42,8 @@ public class AWVoronoi extends HyperbolicArcEdgeTesselation
 				// back, move back.
 				// Regarding to parameters, see Okabe, Boots, Sugihara, Chiu.
 				// Spatial Tessellations, Wiley.
-				WeightedGenerator a = mGenerators.get( i );
-				WeightedGenerator b = mGenerators.get( j );
+				WeightedVoronoiCell a = mGenerators.get( i );
+				WeightedVoronoiCell b = mGenerators.get( j );
 				
 				float distAB = a.distanceTo( b );
 				float abWeightDif = b.w - a.w;
@@ -77,7 +77,7 @@ public class AWVoronoi extends HyperbolicArcEdgeTesselation
 								int br2aw = 0;
 								for ( int k = 0; k < mGenerators.size(); k++ )
 								{
-									WeightedGenerator c = mGenerators.get( k );
+									WeightedVoronoiCell c = mGenerators.get( k );
 									if ( k != i && k != j )
 									{
 										float d4aw = rotated.distanceTo( c ) - c.w;
@@ -127,7 +127,7 @@ public class AWVoronoi extends HyperbolicArcEdgeTesselation
 								int br3aw = 0;
 								for ( int k = 0; k < mGenerators.size(); k++ )
 								{
-									WeightedGenerator c = mGenerators.get( k );
+									WeightedVoronoiCell c = mGenerators.get( k );
 									if ( k != i && k != j )
 									{
 										float d6aw = (float)Math.pow( (float)Math.pow( x10aw - c.x, 2 ) + (float)Math.pow( y10aw - c.y, 2 ), 0.5f ) - c.w;

@@ -9,6 +9,16 @@ public class VoronoiCell extends Vec2D
 	private Vec2D mCentroid;
 	private Set<Vec2D> mCellVertices;
 	
+	public VoronoiCell()
+	{
+		super();
+	}
+
+	public VoronoiCell(float x, float y)
+	{
+		super( x, y );
+	}
+	
 	public VoronoiCell( Vec2D mGeneratorPosition )
 	{
 		super( mGeneratorPosition );

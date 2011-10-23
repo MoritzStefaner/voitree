@@ -3,7 +3,7 @@ package com.stephanthiel.tesselation.voronoi;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.stephanthiel.tesselation.voronoi.weighted.WeightedGenerator;
+import com.stephanthiel.tesselation.voronoi.weighted.WeightedVoronoiCell;
 
 import toxi.geom.Vec2D;
 

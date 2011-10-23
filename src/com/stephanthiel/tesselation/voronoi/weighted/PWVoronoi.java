@@ -14,7 +14,7 @@ import com.stephanthiel.tesselation.sort.XAxisSort;
 
 public class PWVoronoi extends LinearEdgeTesselation
 {
-	List<WeightedGenerator> kgen;
+	List<WeightedVoronoiCell> kgen;
 
 	public PWVoronoi(int width, int height)
 	{
@@ -22,12 +22,12 @@ public class PWVoronoi extends LinearEdgeTesselation
 		mHeight = height;
 	}
 
-	public void setGenerators( List<WeightedGenerator> mGenerators )
+	public void setGenerators( List<WeightedVoronoiCell> mGenerators )
 	{
 		super.setGenerators( mGenerators );
-		kgen = new ArrayList<WeightedGenerator>();
+		kgen = new ArrayList<WeightedVoronoiCell>();
 		for ( int i = 0; i < mGenerators.size(); i++ )
-			kgen.add( new WeightedGenerator() );
+			kgen.add( new WeightedVoronoiCell() );
 	}
 
 	@Override
@@ -44,8 +44,8 @@ public class PWVoronoi extends LinearEdgeTesselation
 		{
 			for ( int j = i + 1; j < mGenerators.size(); j++ )
 			{
-				WeightedGenerator a = mGenerators.get( i );
-				WeightedGenerator b = mGenerators.get( j );
+				WeightedVoronoiCell a = mGenerators.get( i );
+				WeightedVoronoiCell b = mGenerators.get( j );
 
 				float eipw = (float) Math.pow( a.x, 2 ) + (float) Math.pow( a.y, 2 );
 				float ejpw = (float) Math.pow( b.x, 2 ) + (float) Math.pow( b.y, 2 );
@@ -96,12 +96,12 @@ public class PWVoronoi extends LinearEdgeTesselation
 				}
 
 				int lpw = 0;
-				WeightedGenerator kgen1 = kgen.get( lpw );
+				WeightedVoronoiCell kgen1 = kgen.get( lpw );
 				kgen1.set( x0pw, y0pw );
 
 				for ( int k = 0; k < mGenerators.size(); k++ )
 				{
-					WeightedGenerator c = mGenerators.get( k );
+					WeightedVoronoiCell c = mGenerators.get( k );
 					if ( k != i && k != j )
 					{
 						float c2pw = 0.5f * ( c.magSquared() - eipw - ( c.w - a.w ) );
@@ -129,8 +129,8 @@ public class PWVoronoi extends LinearEdgeTesselation
 				for ( int k = 0; k < lpw; k++ )
 					kgen.get( k ).w = 0;
 
-				List<WeightedGenerator> sl = kgen.subList( 0, lpw );
-				List<WeightedGenerator> append = kgen.subList( lpw, kgen.size() );
+				List<WeightedVoronoiCell> sl = kgen.subList( 0, lpw );
+				List<WeightedVoronoiCell> append = kgen.subList( lpw, kgen.size() );
 				Collections.sort( sl, new XAxisSort() );
 				sl.addAll( append );
 				kgen = sl;
@@ -143,7 +143,7 @@ public class PWVoronoi extends LinearEdgeTesselation
 					float br2pw = 0;
 					for ( int l = 0; l < mGenerators.size(); l++ )
 					{
-						WeightedGenerator c = mGenerators.get( l );
+						WeightedVoronoiCell c = mGenerators.get( l );
 						if ( l != i && l != j )
 						{
 							float uspw = (float) Math.pow( xxpw - c.x, 2 ) + (float) Math.pow( yypw - c.y, 2 ) - c.w;

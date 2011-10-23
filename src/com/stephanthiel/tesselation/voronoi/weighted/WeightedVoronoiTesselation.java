@@ -8,20 +8,20 @@ import toxi.geom.Vec2D;
 
 public abstract class WeightedVoronoiTesselation
 {
-	protected List<WeightedGenerator> mGenerators;
+	protected List<WeightedVoronoiCell> mGenerators;
 	protected int mWidth;
 	protected int mHeight;
 	
-	public void setGenerators( List<WeightedGenerator> generators )
+	public void setGenerators( List<WeightedVoronoiCell> generators )
 	{
 		if (mGenerators == null)
-			mGenerators = new ArrayList<WeightedGenerator>();
+			mGenerators = new ArrayList<WeightedVoronoiCell>();
 		mGenerators.clear();
-		for ( WeightedGenerator g : generators )
-			mGenerators.add( new WeightedGenerator( g ) );
+		for ( WeightedVoronoiCell g : generators )
+			mGenerators.add( new WeightedVoronoiCell( g ) );
 	}
 	
-	public List<WeightedGenerator> generators()
+	public List<WeightedVoronoiCell> generators()
 	{
 		return mGenerators;
 	}
