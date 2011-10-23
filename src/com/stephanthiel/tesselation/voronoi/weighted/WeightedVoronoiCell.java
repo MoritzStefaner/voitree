@@ -1,37 +1,39 @@
 
 package com.stephanthiel.tesselation.voronoi.weighted;
 
+import com.stephanthiel.tesselation.voronoi.VoronoiCell;
+
 import toxi.geom.Vec2D;
 
-public class WeightedGenerator extends Vec2D
+public class WeightedVoronoiCell extends VoronoiCell
 {
 	public float w;
 
-	public WeightedGenerator()
+	public WeightedVoronoiCell()
 	{
 		super();
 		w = 1.0f;
 	}
 
-	public WeightedGenerator(float x, float y)
+	public WeightedVoronoiCell(float x, float y)
 	{
 		super( x, y );
 		w = 1.0f;
 	}
 
-	public WeightedGenerator(float x, float y, float weight)
+	public WeightedVoronoiCell(float x, float y, float weight)
 	{
 		super( x, y );
 		w = weight;
 	}
 
-	public WeightedGenerator(Vec2D pos, float weight)
+	public WeightedVoronoiCell(Vec2D pos, float weight)
 	{
 		super( pos );
 		w = weight;
 	}
 
-	public WeightedGenerator(WeightedGenerator generator)
+	public WeightedVoronoiCell(WeightedVoronoiCell generator)
 	{
 		super( generator );
 		w = generator.w;
